@@ -1,52 +1,90 @@
-/* Basic reset */
-* {
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Container for the app */
 .container {
-    max-width: 600px;
-    margin: 20px auto;
+    width: 70%;
+    margin: 50px auto;
     padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for textarea and input fields */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
 textarea, select {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 10px;
     font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-/* Result section */
-#result {
+.result {
+    display: none;
     margin-top: 30px;
 }
 
-#result img {
-    max-width: 300px;
-    margin-top: 10px;
-    border-radius: 8px;
+h2 {
+    color: #333;
 }
-    
+
+.pictogram-img {
+    max-width: 300px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 5px;
+}

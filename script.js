@@ -4,6 +4,8 @@ const languageSelector = document.getElementById("language");
 const submitBtn = document.getElementById("submit-btn");
 const translatedTextElement = document.getElementById("translated-text");
 const pictogramImageElement = document.getElementById("pictogram");
+const pictogramIdListElement = document.getElementById("pictogram-id-list");
+const resultElement = document.getElementById("result");
 
 const apiUrl = "https://feedlight42-text2picto.hf.space/v1/translate"; // Hugging Face Space API URL
 
@@ -40,6 +42,19 @@ submitBtn.addEventListener("click", async function () {
         translatedTextElement.innerText = data.tgt; // Show translated sentence
         pictogramImageElement.src = `data:image/png;base64,${data.image_base64}`; // Show base64 image
         pictogramImageElement.alt = "Pictogram for " + data.src; // Add alt text for image
+
+        // Display the pictogram ID list
+        pictogramIdListElement.innerHTML = ''; // Clear previous ID list
+        if (data.pictogram_ids && data.pictogram_ids.length > 0) {
+            data.pictogram_ids.forEach(id => {
+                const li = document.createElement('li');
+                li.innerText = `Pictogram ID: ${id}`;
+                pictogramIdListElement.appendChild(li);
+            });
+        }
+
+        // Show result section
+        resultElement.style.display = "block";
 
     } catch (error) {
         console.error("Error:", error);
